@@ -1,0 +1,59 @@
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style individual list items */
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  background-color: #fff9e6; /* soft yellow background */
+  border-radius: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: #212121; /* main text color */
+}
+
+/* Hover effect for list items */
+.todo-list li:hover {
+  background-color: #ffe082; /* brighter yellow */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  color: #1b5e20; /* text color on hover (dark green) */
+}
+
+/* Completed tasks */
+.todo-list li.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: #616161; /* gray for completed tasks */
+}
+
+/* Delete button inside list */
+.todo-list li button {
+  border: none;
+  background-color: #f44336; /* red button */
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for delete button */
+.todo-list li button:hover {
+  background-color: #d32f2f; /* darker red */
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Todo text hover */
+.todo-list li span:hover {
+  color: #388e3c; /* subtle green highlight */
+}

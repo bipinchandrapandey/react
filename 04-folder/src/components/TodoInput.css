@@ -1,0 +1,47 @@
+.todo-input-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input field */
+.todo-input-form input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+/* Input hover & focus */
+.todo-input-form input:hover,
+.todo-input-form input:focus {
+  border-color: #4caf50; /* fresh green */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Button */
+.todo-input-form button {
+  padding: 12px 20px;
+  background-color: #4caf50; /* green button */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover */
+.todo-input-form button:hover {
+  background-color: #43a047; /* darker green */
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

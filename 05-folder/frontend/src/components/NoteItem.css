@@ -1,0 +1,32 @@
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eff6ff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-item p {
+  margin: 0;
+  color: #1e3a8a;
+  font-weight: 500;
+}
+
+.note-item button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.note-item button:hover {
+  color: red;
+}
+.timestamp {
+  font-size: 0.7rem;
+  color: #555;
+  margin-left: 0.5rem;
+}

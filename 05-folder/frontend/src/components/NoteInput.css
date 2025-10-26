@@ -1,0 +1,27 @@
+.note-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.note-input input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #3b82f6;
+  border-radius: 8px;
+  outline: none;
+}
+
+.note-input button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.note-input button:hover {
+  background-color: #2563eb;
+}

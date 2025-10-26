@@ -1,0 +1,17 @@
+.footer {
+  margin-top: 25px;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #857f7f;
+  background-color: #61be45;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 3px rgba(12, 11, 11, 0.1);
+  transition: all 0.3s ease;
+  cursor: default; /* change to pointer if clickable */
+}
+
+.footer:hover {
+  background-color: #6394d7; /* slightly darker on hover */
+  box-shadow: 0 4px 10px rgba(13, 2, 2, 0.15); /* lift effect */
+  transform: translateY(-2px);
+}
