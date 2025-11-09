@@ -1,17 +1,42 @@
+/* ======== Footer ======== */
 .footer {
   margin-top: 25px;
-  padding: 10px 0;
-  font-size: 0.9rem;
-  color: #857f7f;
-  background-color: #61be45;
-  border-radius: 8px;
-  box-shadow: inset 0 2px 3px rgba(12, 11, 11, 0.1);
-  transition: all 0.3s ease;
-  cursor: default; /* change to pointer if clickable */
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: linear-gradient(135deg, #61be45, #4ea338); /* soft green gradient */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15), inset 0 2px 3px rgba(255, 255, 255, 0.1);
+  transition: all 0.35s ease;
+  cursor: default; /* use pointer if it's clickable */
+  letter-spacing: 0.3px;
+  text-align: center;
+  backdrop-filter: blur(5px);
 }
 
+/* Hover animation */
 .footer:hover {
-  background-color: #6394d7; /* slightly darker on hover */
-  box-shadow: 0 4px 10px rgba(13, 2, 2, 0.15); /* lift effect */
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #4f9ed5, #3a75d5); /* elegant blue shift */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Optional glowing animation for modern feel */
+.footer:hover::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  transform: translateX(-50%);
+  animation: glowLine 1.5s ease-in-out infinite;
+}
+
+/* Glow effect animation */
+@keyframes glowLine {
+  0%, 100% { opacity: 0; width: 0; }
+  50% { opacity: 1; width: 80%; }
 }

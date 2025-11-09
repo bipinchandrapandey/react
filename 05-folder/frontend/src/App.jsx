@@ -3,6 +3,7 @@ import axios from "axios";
 import NoteInput from "./components/NoteInput";
 import NoteList from "./components/NoteList";
 import "./App.css";
+import { FaEllipsisV } from "react-icons/fa"; // ✅ three-dot icon
 
 const App = () => {
   const [notes, setNotes] = useState([]);
@@ -25,12 +26,9 @@ const App = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Audio objects
+  // Audio
   const addSound = new Audio("/beep2.mp3");
-  addSound.preload = "auto";
-
   const deleteSound = new Audio("/beep.mp3");
-  deleteSound.preload = "auto";
 
   // Fetch notes
   const fetchNotes = async () => {
@@ -53,9 +51,12 @@ const App = () => {
     if (!noteText.trim()) return;
     try {
       const timestamp = new Date().toLocaleString();
-      const res = await axios.post("http://localhost:5000/api/notes", { text: noteText, timestamp });
+      const res = await axios.post("http://localhost:5000/api/notes", {
+        text: noteText,
+        timestamp,
+      });
       setNotes([res.data, ...notes]);
-      if (soundOn) addSound.play().catch(err => console.log(err));
+      if (soundOn) addSound.play().catch(console.error);
     } catch {
       setError("Failed to add note.");
     }
@@ -66,25 +67,23 @@ const App = () => {
     try {
       await axios.delete(`http://localhost:5000/api/notes/${id}`);
       setNotes(notes.filter((note) => note._id !== id));
-      if (soundOn) deleteSound.play().catch(err => console.log(err));
+      if (soundOn) deleteSound.play().catch(console.error);
     } catch {
       setError("Failed to delete note.");
     }
   };
 
-  // Apply body class for dark/light mode
+  // Dark mode
   useEffect(() => {
     document.body.className = darkMode ? "dark-mode" : "light-mode";
   }, [darkMode]);
 
   return (
     <div className="app-container">
-      {/* Three-dot menu */}
+      {/* Three-dot menu using icon */}
       <div className="menu-container" ref={menuRef}>
-        <img
-          src="/three-dot.png"
-          alt="Menu"
-          className="menu-dots-img"
+        <FaEllipsisV
+          className="menu-dots-icon"
           onClick={() => setMenuOpen(!menuOpen)}
         />
         {menuOpen && (

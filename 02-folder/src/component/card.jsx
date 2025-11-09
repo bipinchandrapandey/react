@@ -12,7 +12,7 @@ const Card = (props) => {
       <div className="card">
         <img
           src={props.img}
-          alt="wallpaper"
+          alt={props.icon}
         />
         <h1>{user ? user : "Bipin Pandey"}</h1>
         <p>{age ? `Age: ${age}` : "Age not specified"}</p>

@@ -1,0 +1,439 @@
+/* 🎵 Player Container */
+.player-container {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 30px 25px;
+  background: linear-gradient(135deg, #1db954, #191414);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.player-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.song-title {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #efefef;
+}
+
+/* 🎧 Player Controls */
+.player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.player-icon {
+  font-size: 32px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  color: white;
+}
+
+.player-icon:hover {
+  transform: scale(1.2);
+  color: #ec510a;
+}
+
+.play-pause {
+  font-size: 38px;
+}
+
+/* ⏩ Progress Bar */
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #1ed760;
+  border-radius: 5px;
+  transition: width 0.1s linear;
+}
+
+/* ⏱️ Time Display */
+.time-display {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 🔊 Volume Controls */
+.volume-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.volume-icon {
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.volume-icon:hover {
+  transform: scale(1.2);
+  color: #1ed760;
+}
+
+.volume-slider {
+  width: 100px;
+  cursor: pointer;
+}
+
+.mute-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.mute-button:hover {
+  transform: scale(1.2);
+  color: #1ed760;
+}
+
+/* 👣 Footer */
+.player-subtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+}
+
+/* 🌈 Full-screen Multi-Color Animated Background */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb, #84fab0);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* 🌈 Gradient Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🎶 Header */
+.app-header {
+  color: #1ed760; /* Spotify green accent */
+  font-size: 36px;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Optional hover animation for header */
+.app-header:hover {
+  transform: scale(1.05);
+}
+/* 🎨 Background Change Button */
+.theme-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #1ed760;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.theme-button:hover {
+  background: #1ed760;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #1ed760;
+}
+
+/* ✨ Smooth gradient animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* 🔘 Three-dot menu styling */
+.app-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-icon {
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.menu-icon:hover {
+  transform: rotate(90deg);
+  color: #1ed760;
+}
+
+/* Dropdown menu */
+.menu-dropdown {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #1ed760;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.menu-dropdown button {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 8px 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.menu-dropdown button:hover {
+  background: #1ed760;
+  color: black;
+  border-radius: 6px;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+}
+
+/* Three-dot menu in top-left corner */
+.three-dot {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+}
+
+.menu-icon {
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.menu-icon:hover {
+  transform: rotate(90deg);
+  color: #1ed760;
+}
+
+/* Header styling */
+.app-header {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #1ed760;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+/* 🌈 Animated background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Full screen background container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* important for absolute menu positioning */
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 1s ease-in-out;
+}
+
+/* 🎵 Header styling */
+.app-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/* ⋮ Three-dot menu */
+.menu-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 25px; /* 👈 top-right corner */
+  color: white;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.menu-icon {
+  font-size: 22px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.menu-icon:hover {
+  transform: rotate(90deg);
+  color: #1ed760;
+}
+
+/* Dropdown styling */
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #1ed760;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-dropdown button {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 14px;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.menu-dropdown button:hover {
+  background: #1ed760;
+  color: black;
+  border-radius: 6px;
+}
+/* Full-screen container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
+}
+
+/* 🎛️ Three-dot menu (top-right) */
+.menu-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+
+.menu-icon {
+  font-size: 22px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.menu-icon:hover {
+  transform: rotate(90deg);
+}
+
+/* Dropdown under three-dot */
+.menu-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+}
+
+.menu-dropdown button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.menu-dropdown button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+}
+
+/* Centered player section */
+.player-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.app-header {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}

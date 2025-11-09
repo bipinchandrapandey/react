@@ -1,27 +1,112 @@
-.note-input {
+/* 🌟 NOTE ITEM CONTAINER */
+.note-item {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(17, 17, 17, 0.85));
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.4s ease, background 0.4s ease;
+  animation: fadeInNote 0.5s ease forwards;
 }
 
-.note-input input {
+/* ✨ APPEAR ANIMATION */
+@keyframes fadeInNote {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 💫 HOVER EFFECT — subtle depth + glow */
+.note-item:hover {
+  transform: translateY(-5px) scale(1.01);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(25, 25, 25, 0.95));
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35), 0 0 10px rgba(99, 102, 241, 0.2);
+}
+
+/* 📝 NOTE TEXT */
+.note-item p {
   flex: 1;
-  padding: 10px;
-  border: 2px solid #3b82f6;
-  border-radius: 8px;
-  outline: none;
+  margin: 0;
+  color: #f9fafb;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  word-wrap: break-word;
+  transition: color 0.3s ease;
 }
 
-.note-input button {
-  background-color: #3b82f6;
-  color: white;
+/* ⏱ TIMESTAMP */
+.timestamp {
+  font-size: 0.82rem;
+  color: #c7c7c7;
+  margin-left: 16px;
+  font-style: italic;
+  opacity: 0.85;
+  transition: color 0.3s ease;
+}
+
+.note-item:hover .timestamp {
+  color: #a5b4fc;
+}
+
+/* 🔘 ACTION BUTTONS (edit/delete) */
+.note-item button {
+  background: transparent;
   border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  font-size: 22px;
+  color: #b5b5b5;
+  transition: color 0.3s ease, transform 0.25s ease;
+  margin-left: 12px;
 }
 
-.note-input button:hover {
-  background-color: #2563eb;
+/* ❤️ BUTTON HOVER EFFECT */
+.note-item button:hover {
+  color: #ff4d4d;
+  transform: scale(1.25);
+  text-shadow: 0 0 8px rgba(255, 77, 77, 0.5);
+}
+
+/* 💡 FOCUS STATE (ACCESSIBILITY) */
+.note-item button:focus {
+  outline: none;
+  color: #60a5fa;
+  transform: scale(1.15);
+}
+
+/* 📱 RESPONSIVE STYLING */
+@media (max-width: 600px) {
+  .note-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border-radius: 12px;
+  }
+
+  .note-item p {
+    font-size: 0.95rem;
+  }
+
+  .timestamp {
+    margin-left: 0;
+    margin-top: 6px;
+    font-size: 0.75rem;
+  }
+
+  .note-item button {
+    font-size: 20px;
+  }
 }

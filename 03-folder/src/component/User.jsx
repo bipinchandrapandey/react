@@ -9,7 +9,7 @@ const User = (props) => {
       <div className="card">
         <img
           src={props.img}
-          alt="wallpaper"
+          alt="icon"
         />
         <h1>{User ? User : "Bipin Pandey"}</h1>
       

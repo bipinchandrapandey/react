@@ -1,47 +1,75 @@
+/* ======== Todo Input Form ======== */
 .todo-input-form {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 12px 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.35s ease;
 }
 
-/* Input field */
+/* Slight scale effect on hover */
+.todo-input-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ======== Input Field ======== */
 .todo-input-form input {
   flex: 1;
-  padding: 12px 15px;
+  padding: 12px 16px;
   border-radius: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(200, 200, 200, 0.4);
   font-size: 1rem;
   transition: all 0.3s ease;
-  background-color: #fdfdfd;
+  background-color: rgba(255, 255, 255, 0.85);
   color: #333;
+  outline: none;
 }
 
-/* Input hover & focus */
+/* Input focus and hover */
 .todo-input-form input:hover,
 .todo-input-form input:focus {
-  border-color: #4caf50; /* fresh green */
-  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
-  outline: none;
+  border-color: #6a11cb; /* accent color */
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.4);
   background-color: #fff;
 }
 
-/* Button */
+/* ======== Button ======== */
 .todo-input-form button {
-  padding: 12px 20px;
-  background-color: #4caf50; /* green button */
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
   border: none;
   border-radius: 12px;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(37, 117, 252, 0.3);
 }
 
-/* Button hover */
+/* Button hover effect */
 .todo-input-form button:hover {
-  background-color: #43a047; /* darker green */
+  background: linear-gradient(135deg, #5c0ec4, #1c66e0);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 18px rgba(37, 117, 252, 0.5);
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 600px) {
+  .todo-input-form {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .todo-input-form input,
+  .todo-input-form button {
+    width: 100%;
+  }
 }
