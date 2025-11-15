@@ -1,68 +1,127 @@
+/* =====================================
+   Global Variables & Theme Colors
+===================================== */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --font-main: "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
 
+  /* Light Mode Colors */
+  --light-bg: #ffffff;
+  --light-text: #213547;
+  --light-button-bg: #f4f4f4;
+  --light-hover: #747bff;
+
+  /* Dark Mode Colors */
+  --dark-bg: #1f1f27;
+  --dark-text: rgba(255, 255, 255, 0.92);
+  --dark-button-bg: #2d2d38;
+  --dark-hover: #646cff;
+
+  /* Primary Brand Color */
+  --primary: #646cff;
+
+  font-family: var(--font-main);
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  line-height: 1.6;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  /* Text Rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* =====================================
+   Body
+===================================== */
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  padding: 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+/* =====================================
+   Links
+===================================== */
+a {
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+a:hover {
+  color: var(--dark-hover);
+}
+
+/* =====================================
+   Headings
+===================================== */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0;
+  text-align: center;
+}
+
+/* =====================================
+   Buttons
+===================================== */
+button {
+  padding: 0.7em 1.4em;
+  border-radius: 10px;
+  font-size: 1em;
+  border: 1px solid transparent;
+  background: var(--dark-button-bg);
+  color: var(--dark-text);
+  font-weight: 500;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 3px solid var(--primary);
 }
 
+/* =====================================
+   Light Mode Styles
+===================================== */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    background: var(--light-bg);
+    color: var(--light-text);
   }
+
+  body {
+    background: var(--light-bg);
+    color: var(--light-text);
+  }
+
   a:hover {
-    color: #747bff;
+    color: var(--light-hover);
   }
+
   button {
-    background-color: #f9f9f9;
+    background: var(--light-button-bg);
+    color: var(--light-text);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
   }
+}
+
+/* =====================================
+   Smooth Animations
+===================================== */
+* {
+  transition: background 0.25s ease, color 0.25s ease;
 }

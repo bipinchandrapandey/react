@@ -1,101 +1,161 @@
-/* 🌟 Note Item Container */
+/* 🌟 NOTE ITEM — Ultra Premium Glass + Glow */
 .note-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, rgba(82, 76, 170, 0.85), rgba(20, 20, 20, 0.95));
-  backdrop-filter: blur(14px);
-  padding: 16px 22px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-  margin-bottom: 14px;
-  transition: all 0.35s ease;
-  animation: fadeInNote 0.4s ease forwards;
+
+  background: linear-gradient(
+    140deg,
+    rgba(82, 76, 170, 0.75),
+    rgba(15, 15, 15, 0.92)
+  );
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+
+  padding: 18px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  margin-bottom: 16px;
+
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.55),
+    inset 0 0 22px rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.35s ease,
+    background 0.45s ease,
+    box-shadow 0.45s ease,
+    border 0.35s ease,
+    opacity 0.35s ease;
+
+  animation: fadeInNote 0.45s ease forwards;
 }
 
-/* ✨ Smooth fade-in animation */
+/* ✨ Fade-In Entrance */
 @keyframes fadeInNote {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(12px) scale(0.98);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-/* 🪶 Hover effect with depth and glow */
+/* 🪶 Hover — smooth lift, neon highlight, premium glow */
 .note-item:hover {
-  transform: translateY(-4px) scale(1.01);
-  background: linear-gradient(135deg, rgba(115, 102, 255, 1), rgba(25, 25, 25, 1));
-  box-shadow: 0 8px 22px rgba(115, 102, 255, 0.45), 0 0 8px rgba(115, 102, 255, 0.25);
+  transform: translateY(-6px) scale(1.02);
+
+  background: linear-gradient(
+    140deg,
+    rgba(115, 102, 255, 0.95),
+    rgba(18, 18, 18, 1)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.20);
+
+  box-shadow:
+    0 12px 36px rgba(115, 102, 255, 0.50),
+    0 0 18px rgba(115, 102, 255, 0.30),
+    inset 0 0 32px rgba(255, 255, 255, 0.05);
 }
 
-/* 📝 Note Text */
+/* 📝 Perfect Note Text */
 .note-item p {
-  margin: 0;
-  color: #f9fafb;
-  font-weight: 500;
-  font-size: 1.05rem;
-  letter-spacing: 0.4px;
   flex: 1;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  line-height: 1.4;
+  margin: 0;
+
+  color: #fafafa;
+  font-weight: 500;
+  font-size: 1.12rem;
+  line-height: 1.50;
+  letter-spacing: 0.45px;
+
   word-wrap: break-word;
+  user-select: none;
+
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.note-item:hover p {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
 }
 
 /* ⏱ Timestamp */
 .timestamp {
-  font-size: 0.82rem;
-  color: #d1d1d1;
-  margin-left: 16px;
+  font-size: 0.85rem;
   font-style: italic;
-  opacity: 0.85;
   white-space: nowrap;
+
+  color: #d4d4d4;
+  opacity: 0.85;
+
+  margin-left: 18px;
+
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
-/* 🔘 Action Buttons (delete/edit etc.) */
+.note-item:hover .timestamp {
+  color: #c7caff;
+  opacity: 1;
+}
+
+/* 🔘 Action Buttons */
 .note-item button {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 22px;
-  color: #b0b0b0;
-  transition: color 0.3s ease, transform 0.25s ease;
-  margin-left: 12px;
+
+  font-size: 24px;
+  margin-left: 14px;
+
+  color: #bcbcbc;
+
+  transition:
+    color 0.3s ease,
+    transform 0.25s ease,
+    text-shadow 0.25s ease;
 }
 
-/* ❤️ Hover Animation for Buttons */
+/* ❤️ Button Hover — neon red with tilt */
 .note-item button:hover {
   color: #ff4d4d;
-  transform: scale(1.25) rotate(5deg);
-  text-shadow: 0 0 8px rgba(255, 77, 77, 0.4);
+  transform: scale(1.28) rotate(5deg);
+  text-shadow: 0 0 12px rgba(255, 77, 77, 0.55);
 }
 
-/* 💡 Focus Glow for Accessibility */
+/* 🔷 Focus State */
 .note-item button:focus {
   outline: none;
-  color: #60a5fa;
-  transform: scale(1.15);
+  color: #7db7ff;
+  transform: scale(1.18);
 }
 
-/* 🧊 Responsive Behavior */
+/* 📱 Responsive View */
 @media (max-width: 600px) {
   .note-item {
     flex-direction: column;
     align-items: flex-start;
-    padding: 14px 16px;
+    padding: 16px 18px;
+    border-radius: 16px;
+  }
+
+  .note-item p {
+    font-size: 1.02rem;
   }
 
   .timestamp {
     margin-left: 0;
-    margin-top: 6px;
-    font-size: 0.75rem;
+    margin-top: 8px;
+    font-size: 0.78rem;
   }
 
   .note-item button {
-    font-size: 20px;
+    font-size: 22px;
   }
 }

@@ -1,112 +1,163 @@
-/* 🌟 NOTE ITEM CONTAINER */
+/* 🌟 NOTE ITEM CONTAINER — Ultra Premium */
 .note-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(17, 17, 17, 0.85));
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 16px 20px;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.4s ease, background 0.4s ease;
-  animation: fadeInNote 0.5s ease forwards;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(20, 20, 20, 0.70)
+  );
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+
+  padding: 18px 24px;
+  margin-bottom: 18px;
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.55),
+    inset 0 0 35px rgba(255, 255, 255, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.45s ease,
+    background 0.45s ease,
+    border 0.35s ease,
+    opacity 0.35s ease;
+
+  animation: fadeInNote 0.6s ease forwards;
 }
 
-/* ✨ APPEAR ANIMATION */
+/* ✨ FADE IN APPEAR */
 @keyframes fadeInNote {
   0% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(14px) scale(0.97);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-/* 💫 HOVER EFFECT — subtle depth + glow */
+/* ✨ HOVER EFFECT — Deep Glow + Lift */
 .note-item:hover {
-  transform: translateY(-5px) scale(1.01);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(25, 25, 25, 0.95));
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35), 0 0 10px rgba(99, 102, 241, 0.2);
+  transform: translateY(-8px) scale(1.02);
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(25, 25, 25, 0.85)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.20);
+
+  box-shadow:
+    0 12px 42px rgba(99, 102, 241, 0.45),
+    0 0 22px rgba(99, 102, 241, 0.35),
+    inset 0 0 40px rgba(255, 255, 255, 0.08);
 }
 
-/* 📝 NOTE TEXT */
+/* 📝 TEXT — Clean & Bright */
 .note-item p {
   flex: 1;
   margin: 0;
-  color: #f9fafb;
+
+  color: #fdfdfd;
   font-weight: 500;
-  font-size: 1.05rem;
-  line-height: 1.5;
-  letter-spacing: 0.4px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  font-size: 1.12rem;
+  line-height: 1.55;
+  letter-spacing: 0.35px;
+
   user-select: none;
   word-wrap: break-word;
-  transition: color 0.3s ease;
+
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55);
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+/* Hover Text Pop */
+.note-item:hover p {
+  color: #ffffff;
+  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.75);
 }
 
 /* ⏱ TIMESTAMP */
 .timestamp {
-  font-size: 0.82rem;
-  color: #c7c7c7;
-  margin-left: 16px;
+  font-size: 0.86rem;
   font-style: italic;
   opacity: 0.85;
-  transition: color 0.3s ease;
+
+  margin-left: 18px;
+
+  color: #d0d0d0;
+  transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .note-item:hover .timestamp {
-  color: #a5b4fc;
+  color: #b9c6ff;
+  opacity: 1;
 }
 
-/* 🔘 ACTION BUTTONS (edit/delete) */
+/* 🔘 ACTION BUTTONS — Minimal Icons */
 .note-item button {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 22px;
-  color: #b5b5b5;
-  transition: color 0.3s ease, transform 0.25s ease;
-  margin-left: 12px;
+
+  font-size: 24px;
+  margin-left: 14px;
+
+  color: #d0d0d0;
+
+  transition:
+    transform 0.25s ease,
+    color 0.3s ease,
+    text-shadow 0.25s ease;
 }
 
-/* ❤️ BUTTON HOVER EFFECT */
+/* Button Hover Glow */
 .note-item button:hover {
-  color: #ff4d4d;
-  transform: scale(1.25);
-  text-shadow: 0 0 8px rgba(255, 77, 77, 0.5);
+  color: #5ee2ff;
+  transform: scale(1.28);
+
+  text-shadow: 0 0 10px rgba(94, 226, 255, 0.55);
 }
 
-/* 💡 FOCUS STATE (ACCESSIBILITY) */
+/* Focus Accessibility */
 .note-item button:focus {
   outline: none;
-  color: #60a5fa;
-  transform: scale(1.15);
+  color: #93baff;
+  transform: scale(1.18);
 }
 
-/* 📱 RESPONSIVE STYLING */
+/* 📱 Mobile Optimized */
 @media (max-width: 600px) {
   .note-item {
     flex-direction: column;
     align-items: flex-start;
-    padding: 14px 16px;
-    border-radius: 12px;
+    padding: 16px 18px;
+    border-radius: 16px;
   }
 
   .note-item p {
-    font-size: 0.95rem;
+    font-size: 1.02rem;
   }
 
   .timestamp {
     margin-left: 0;
-    margin-top: 6px;
-    font-size: 0.75rem;
+    margin-top: 8px;
+    font-size: 0.78rem;
   }
 
   .note-item button {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
